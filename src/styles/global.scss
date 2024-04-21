@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #000;
+}
+
+/* header styles */
+
+.header{
+    padding: 15px;
+    &__container{
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo{
+        width: 26px;
+        height: 43px;
+    }
+}
+
+.header-list{
+    display: flex;
+    &__item{
+        color: #fff;
+        margin-right: 40px;
+        padding-bottom: 3px;
+        font-size: 18px;
+        position: relative;
+        &:last-child{
+            margin-right: 0;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            transform: scale(0);
+            transition: all 0.4s ease;
+        }
+        &:hover::after{
+            transform: scale(1);
+        }
+    }
+}
+
+/* preview styles */
+
+.preview{
+    height: 100vh;
+    background-image: url('../img/ocean.jpg');
+    background-position: center;
+    background-repeat:  no-repeat;
+    background-size: cover;
+    animation: changing 10s infinite;
+    position: relative;
+    &__wrapper{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__title{
+        font-size: 70px;
+        color: #000;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    &__text{
+        font-size: 30px;
+        color: #000;
+        text-align: center;
+    }
+    @keyframes changing {
+        0% {
+            background-image: url('../img/ocean.jpg');
+        }
+        35% {
+            background-image: url('../img/lake.jpg');
+        }
+        70% {
+            background-image: url('../img/stream.jpg');
+        }
+    }
+}
+
+/* offer styles */
+
+.offer {
+    height: 100vh;
+    position: relative;
+    &__wrapper{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__title{
+        color: #fff;
+        font-size: 50px;
+        margin-bottom: 45px;
+        white-space: nowrap
+    }
+}
+
+.scroll-indicator {
+    width: 50px;
+    margin: 0 auto;
+    &__img{
+        width: 100%;
+        animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+    
+        40% {
+            transform: translateY(-30px);
+        }
+    
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+}
+
+/* content styles */
+
+.content {
+    width: 100%;
+    height: 100vh;
+    background: url('../img/bali.jpg');
+    background-position: center;
+    background-repeat:  no-repeat;
+    background-size: cover;
+    animation: places 10s infinite;
+    position: relative;
+    &__wrapper{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__title{
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 45px;
+    }
+    &__text{
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    @keyframes places {
+        0% {
+            background-image: url('../img/bali.jpg');
+        }
+        25% {
+            background-image: url('../img/santorini.jpg');
+        }
+        50% {
+            background-image: url('../img/kanon.jpg');
+        }
+        75%{
+            background-image: url('../img/zanzibar.jpg');
+        }
+    }
+}
+
+/* hotels styles */
+
+.hotels {
+    padding: 80px 100px;
+    &__title{
+        color: #fff;
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 35px;
+    }
+    &__text{
+        color: #fff;
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 55px;
+    }
+}
+
+.hotels-logos{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 20px;
+    &__item{
+        width: 220px;
+        justify-self: center;
+    }
+    &__pic{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* apartments styles */
+
+.apartments {
+    width: 100%;
+    height: 100vh;
+    background: url('../img/apartaments.png');
+    background-position: center;
+    background-repeat:  no-repeat;
+    background-size: cover;
+    animation: apartments 10s infinite;
+    position: relative;
+    &__wrapper{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__title{
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 35px;
+    }
+    &__text{
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    @keyframes apartments {
+        0% {
+            background-image: url('../img/apartaments.png');
+        }
+        35% {
+            background-image: url('../img/hotel.png');
+        }
+        70%{
+            background-image: url('../img/castle.jpg');
+        }
+    }
+}
+
+/* transports styles */
+
+.transports{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 0;
+    &__title{
+        color: #fff;
+        font-size: 50px;
+        margin-bottom: 45px;
+    }
+    &__wrapper{
+        display: flex;
+    }
+    &__item{
+        width: 420px;
+        height: 720px;
+        position: relative;
+        background-size: cover;
+        transition: background-image 0.3s ease-in-out;
+        &:nth-child(1) {
+            background-image: url('../img/yacht.png');
+            &:hover{
+                background-image: url('../img/yacht-color.png');
+            }
+        }
+        &:nth-child(2) {
+            background-image: url('../img/cruise.png');
+            &:hover{
+                background-image: url('../img/cruise-color.png');
+            }
+        }
+        &:nth-child(3) {
+            background-image: url('../img/fly-tickets.png');
+            &:hover{
+                background-image: url('../img/fly-tickets-color.png');
+            }
+        }
+    }
+    &__name{
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        font-size: 25px;
+        color: #fff;
+    }
+}
+
+/* booking styles */
+
+.booking{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+    &__title{
+        color: #fff;
+        font-size: 50px;
+        margin-bottom: 45px;
+    }
+}
+
+.booking-form{
+    display: grid;
+    grid-template-columns: repeat(2, 340px);
+    grid-gap: 30px;
+    &__input{
+        padding: 15px;
+        font-size: 18px;
+        border-radius: 25px;
+        color: #fff;
+        border: 1px solid #fff;
+        background-color: #000;
+        &_require{
+            grid-column: span 2;
+        }
+    }
+    &__button{
+        display: block;
+        padding: 15px 0;
+        font-size: 18px;
+        border-radius: 25px;
+        background-color: #fff;
+        color: #000;
+        width: 350px;
+        grid-column: span 2;
+        justify-self: center;
+        transition: 0.4s ease;
+        &:hover{
+            cursor: pointer;
+            color: #fff;
+            background-color: #003E4E;
+        }
+    }
+}
+
+/* footer styles */
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 70px 50px;
+    color: #fff;
+    font-size: 20px;
+}
